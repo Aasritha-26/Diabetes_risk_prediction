@@ -6,8 +6,6 @@ import pandas as pd
 transformer = pickle.load(open('XG_transformer.pkl', 'rb'))
 model = pickle.load(open('XG_model.pkl', 'rb'))
 
-st.write("Model object:", model)
-st.write("Model booster params:", model.get_params())
 st.header("Diabetes Risk Prediction")
 
 st.write("Enter patient details to predict diabetes risk")
@@ -55,4 +53,5 @@ if submit:
     risk_score = model.predict(trans_data)[0]
 
     st.write(f"Risk Score: {risk_score:.2f}")
+
 

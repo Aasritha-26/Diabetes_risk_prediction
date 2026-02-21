@@ -53,10 +53,3 @@ if submit:
     risk_score = model.predict(trans_data)[0]
 
     st.write(f"Risk Score: {risk_score:.2f}")
-
-    if risk_score <= 33:
-        st.success("Low Risk of Diabetes")
-    elif risk_score <= 66:
-        st.warning("Prediabetes")
-    else:
-        st.error("High Risk of Diabetes")
